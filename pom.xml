@@ -11,6 +11,7 @@
 
     <modules>
         <module>renren-fast</module>
+        <module>renren-generator</module>
         <module>gulimall-coupon</module>
     </modules>
 
