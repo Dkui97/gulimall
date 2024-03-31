@@ -1,12 +1,21 @@
 /.idea/
 
+/gulimall-common/target/
+
+/gulimall-coupon/target/
+
+/gulimall-member/target/
+
+/gulimall-order/target/
+
+/gulimall-product/target/
+
+/gulimall-ware/target/
+
 /renren-fast/target/
 
 /renren-generator/target/
 
-/gulimall_common/target/
-
-/gulimall_oms/target/
 
 
 
