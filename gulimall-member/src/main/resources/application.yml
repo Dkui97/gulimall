@@ -8,6 +8,13 @@ spring:
     password: root
     url: jdbc:mysql://60.204.249.234:3306/gulimall_ums
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 60.204.249.234:8848
+  application:
+    name: gulimall-member
+
 
 # MapperScan
 # sql映射文件位置
