@@ -72,6 +72,17 @@
             <artifactId>spring-cloud-loadbalancer</artifactId>
             <version>3.0.3</version>
         </dependency>
+        <!-- nacos 配置中心-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!--        nacos配置无效引入-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <!--    引入 spring-cloud-alibaba-->
