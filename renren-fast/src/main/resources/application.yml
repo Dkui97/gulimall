@@ -31,6 +31,12 @@ spring:
 #  resources:
 #    add-mappings: false
 
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 60.204.249.234:8848
+  application:
+    name: renren-fast
 
 #mybatis
 mybatis-plus:
