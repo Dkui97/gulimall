@@ -6,7 +6,7 @@ server:
       max: 1000
       min-spare: 30
     connection-timeout: 5000ms
-  port: 8080
+  port: 8800
   servlet:
     context-path: /renren-fast
 
@@ -36,7 +36,7 @@ spring:
       discovery:
         server-addr: 60.204.249.234:8848
   application:
-    name: renren-fast
+    name: gulimall-admin
 
 #mybatis
 mybatis-plus:
