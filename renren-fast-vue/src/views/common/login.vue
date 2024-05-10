@@ -1,11 +1,12 @@
 <template>
-  <div class="site-wrapper site-page--login">
+<!--  <div class="site-wrapper site-page&#45;&#45;login">-->
+  <div >
     <div class="site-content__wrapper">
       <div class="site-content">
-        <div class="brand-info">
-          <h2 class="brand-info__text">renren-fast-vue</h2>
-          <p class="brand-info__intro">renren-fast-vue基于vue、element-ui构建开发，实现renren-fast后台管理前端功能，提供一套更优的前端解决方案。</p>
-        </div>
+<!--        <div class="brand-info">-->
+<!--          <h2 class="brand-info__text">renren-fast-vue</h2>-->
+<!--          <p class="brand-info__intro">renren-fast-vue基于vue、element-ui构建开发，实现renren-fast后台管理前端功能，提供一套更优的前端解决方案。</p>-->
+<!--        </div>-->
         <div class="login-main">
           <h3 class="login-title">管理员登录</h3>
           <el-form :model="dataForm" :rules="dataRule" ref="dataForm" @keyup.enter.native="dataFormSubmit()" status-icon>
