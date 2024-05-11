@@ -19,6 +19,13 @@ spring:
           predicates:
             - Query=url,qq
 
+        - id: product_route
+          uri: lb://gulimall-product # 注册中心的服务
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /$\{segment}
+
         - id: admin_route
           uri: lb://renren-fast # 路由给renren-fast  lb代表负载均衡
           predicates:  # 什么情况路由它

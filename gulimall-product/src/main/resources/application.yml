@@ -12,8 +12,6 @@ spring:
     nacos:
       discovery:
         server-addr: 60.204.249.234:8848
-  application:
-    name: gulimall-product
 
 # MapperScan
 # sql映射文件位置
