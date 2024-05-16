@@ -16,7 +16,7 @@
       </el-form-item>
       <el-form-item label="显示状态" prop="showStatus">
         <el-switch
-          v-model="dataForm.showStatus"
+          v-model.number="dataForm.showStatus"
           active-color="#13ce66"
           inactive-color="#ff4949"
           :active-value="1"
@@ -28,7 +28,7 @@
         <el-input v-model="dataForm.firstLetter" placeholder="检索首字母"></el-input>
       </el-form-item>
       <el-form-item label="排序" prop="sort">
-        <el-input v-model="dataForm.sort" placeholder="排序"></el-input>
+        <el-input v-model.number="dataForm.sort" placeholder="排序"></el-input>
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -51,28 +51,68 @@ export default {
         name: '',
         logo: '',
         descript: '',
-        showStatus: '',
+        showStatus: 0,
         firstLetter: '',
-        sort: ''
+        sort: 0
       },
       dataRule: {
         name: [
-          {required: true, message: '品牌名不能为空', trigger: 'blur'}
+          {
+            validator: (rule, value, callback) => {
+              if (value === '') {
+                callback(new Error('品牌名不能为空'))
+              } else if (value.length > 0 && value.length > 10) {
+                callback(new Error('品牌名在10个字符以内'))
+              } else {
+                callback();
+              }
+            }
+          }
         ],
         logo: [
-          {required: true, message: '品牌logo地址不能为空', trigger: 'blur'}
+          {required: true, message: '品牌logo不能为空', trigger: 'blur'}
         ],
         descript: [
           {required: true, message: '介绍不能为空', trigger: 'blur'}
         ],
         showStatus: [
-          {required: true, message: '显示状态[0-不显示；1-显示]不能为空', trigger: 'blur'}
+          {
+            validator: (rule, value, callback) => {
+              if (value === '') {
+                callback(new Error('检索首字母不能为空'))
+              } else if (!Number.isInteger(value)) {
+                callback(new Error('请输入显示状态要为整数'))
+              } else {
+                callback()
+              }
+            }
+          }
         ],
         firstLetter: [
-          {required: true, message: '检索首字母不能为空', trigger: 'blur'}
+          {
+            validator: (rule, value, callback) => {
+              if (value === '') {
+                callback(new Error('检索首字母不能为空'))
+              } else if (!/^[a-zA-Z]$/.test(value)) {
+                callback(new Error('首字母必须a-z或者A-Z之间'))
+              } else {
+                callback()
+              }
+            }
+          }
         ],
         sort: [
-          {required: true, message: '排序不能为空', trigger: 'blur'}
+          {
+            validator: (rule, value, callback) => {
+              if (value === '') {
+                callback(new Error('排序不能为空'))
+              } else if (!Number.isInteger(value) || value < 0) {
+                callback(new Error('排序必须是一个大于等于0的整数'))
+              } else {
+                callback()
+              }
+            }
+          }
         ]
       }
     }
